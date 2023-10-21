@@ -1,9 +1,11 @@
-from django.urls import path 
+from django.urls import path
 
-from . import views
+from .views import gallery , photoview , categoryview , addphoto
 
 urlpatterns = [
-    path('' , views.gallery , name='gallery'),
-    path('photo/<int:pk>/' , views.photo , name='photo'),
-    path('add/' , views.add , name='add'),
+    path('' , gallery , name='gallery'),
+    path('photo/<int:pk>/', photoview , name='photo'),
+    path('category/<int:pk>/' , categoryview , name='category'),
+    path('upload/' , addphoto , name='addphoto')
+    
 ]
